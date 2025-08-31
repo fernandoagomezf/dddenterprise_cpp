@@ -3,14 +3,10 @@
 
 using vantage::domain::core::ValueObject;
 
-ValueObject::ValueObject() {
-
+bool ValueObject::operator==(const ValueObject& other) const {
+    return equals(other);
 }
-
-ValueObject::ValueObject(const ValueObject& other) {
-
-}
-
-ValueObject::~ValueObject() {
-
+            
+bool ValueObject::operator!=(const ValueObject& other) const {
+    return !equals(other);
 }

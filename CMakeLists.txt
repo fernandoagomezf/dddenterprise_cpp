@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 list(APPEND CMAKE_PREFIX_PATH "C:/vcpkg/installed/x64-windows")
  
 add_executable(VantagePoint
+    src/domain/core/domainexception.cpp
     src/domain/core/valueobject.cpp
-
 
     src/application/program.cpp
 )
