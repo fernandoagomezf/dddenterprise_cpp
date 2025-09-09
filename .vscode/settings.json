@@ -4,11 +4,18 @@
         "vector": "cpp",
         "xstring": "cpp",
         "functional": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "stdexcept": "cpp"
     },
     "cmake.configureSettings": {
-        "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake"
+        "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
     },
     "cmake.generator": "Visual Studio 17 2022",
-    "cmake.preferredGenerators": ["Visual Studio 17 2022"]
+    "cmake.preferredGenerators": ["Visual Studio 17 2022"],
+    "testmate.cpp.test.advancedExecutables": [{
+        "pattern": "build/tests/*_test",
+        "workingDirectory": "${workspaceFolder}"
+    }],
+    "testmate.cpp.test.parallelExecution": false
 }

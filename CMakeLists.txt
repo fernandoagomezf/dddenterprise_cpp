@@ -8,14 +8,29 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 list(APPEND CMAKE_PREFIX_PATH "C:/vcpkg/installed/x64-windows")
- 
-add_executable(VantagePoint
-    src/domain/core/domainexception.cpp
-    src/domain/core/valueobject.cpp
 
+add_library(VantagePointLib STATIC
+    src/domain/common/domainexception.cpp 
+    src/domain/common/valueobject.cpp 
+)
+
+target_include_directories(VantagePointLib PUBLIC 
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+enable_testing()
+
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/lib/doctest
+)
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tests)
+    add_subdirectory(tests)
+endif()
+
+# Keep your original executable
+add_executable(VantagePoint
     src/application/program.cpp
 )
 
-target_include_directories(VantagePoint PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include  
-)
+target_link_libraries(VantagePoint PRIVATE VantagePointLib)
