@@ -7,7 +7,8 @@
         "memory": "cpp",
         "stdexcept": "cpp",
         "type_traits": "cpp",
-        "locale": "cpp"
+        "locale": "cpp",
+        "random": "cpp"
     },
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",

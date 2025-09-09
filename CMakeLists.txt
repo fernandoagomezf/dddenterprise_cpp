@@ -12,6 +12,7 @@ list(APPEND CMAKE_PREFIX_PATH "C:/vcpkg/installed/x64-windows")
 add_library(VantagePointLib STATIC
     src/domain/common/domainevent.cpp
     src/domain/common/domainexception.cpp 
+    src/domain/common/identifier.cpp
     src/domain/common/valueobject.cpp 
 )
 
