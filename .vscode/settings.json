@@ -9,7 +9,9 @@
         "type_traits": "cpp",
         "locale": "cpp",
         "random": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "xloctime": "cpp",
+        "xlocmon": "cpp"
     },
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
