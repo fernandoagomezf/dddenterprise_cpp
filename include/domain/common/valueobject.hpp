@@ -9,7 +9,7 @@ namespace vantage::domain::common {
             virtual ~ValueObject() = default;
 
             virtual bool equals(const ValueObject& other) const = 0;
-            virtual std::size_t hash() const = 0;
+            virtual std::size_t hashCode() const = 0;
             virtual std::string toString() const = 0;
     };
 }
