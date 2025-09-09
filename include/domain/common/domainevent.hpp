@@ -3,27 +3,22 @@
 #include <string>
 #include "valueobject.hpp"
 
-namespace vantage::domain::core {
+namespace vantage::domain::common {
     using std::size_t;
     using std::string;
-    using vantage::domain::core::ValueObject;
+    using vantage::domain::common::ValueObject;
 
     class DomainEvent final : public ValueObject {
         public:
-            DomainEvent() = delete;
-            explicit DomainEvent(const string& code);
-            DomainEvent(const DomainEvent&) = default;
+            explicit DomainEvent(const string& context, const string& code);
             ~DomainEvent() override = default;
-
-            DomainEvent& operator=(const DomainEvent&) = default;
-            DomainEvent(DomainEvent&&) = default;
-            DomainEvent& operator=(DomainEvent&&) = default;
             
             bool equals(const ValueObject& other) const override;
-            size_t hash() const override;
+            size_t hashCode() const override;
             string toString() const override;
 
         private:
+            string _context;
             string _code;
     };
 }

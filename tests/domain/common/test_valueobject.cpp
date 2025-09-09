@@ -14,7 +14,7 @@ class TestValueObject : public ValueObject {
             return otherVO && (_value == otherVO->_value);
         }
 
-        std::size_t hash() const override {
+        std::size_t hashCode() const override {
             return std::hash<int>{}(_value);
         }
 
@@ -60,13 +60,13 @@ TEST_CASE("ValueObject - Hashing") {
         TestValueObject vo1(10);
         TestValueObject vo2(10);
 
-        CHECK(vo1.hash() == vo2.hash());
+        CHECK(vo1.hashCode() == vo2.hashCode());
     }
     SUBCASE("Hashing - check hash of different objects") {
         TestValueObject vo1(10);
         TestValueObject vo2(20);
 
-        CHECK(vo1.hash() != vo2.hash());
+        CHECK(vo1.hashCode() != vo2.hashCode());
     }
 }
 

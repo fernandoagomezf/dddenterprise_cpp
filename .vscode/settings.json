@@ -5,7 +5,9 @@
         "xstring": "cpp",
         "functional": "cpp",
         "memory": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "type_traits": "cpp",
+        "locale": "cpp"
     },
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
