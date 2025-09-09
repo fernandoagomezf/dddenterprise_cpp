@@ -13,6 +13,7 @@ add_library(VantagePointLib STATIC
     src/domain/common/datetime.cpp
     src/domain/common/domainevent.cpp
     src/domain/common/domainexception.cpp 
+    src/domain/common/entity.cpp
     src/domain/common/identifier.cpp
     src/domain/common/valueobject.cpp 
 )
