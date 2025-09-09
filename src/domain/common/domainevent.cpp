@@ -17,8 +17,10 @@ DomainEvent::DomainEvent(const string& context, const string& code)
 }
 
 bool DomainEvent::equals(const ValueObject& other) const {
-    const auto* event = dynamic_cast<const DomainEvent*>(&other);
-    return event && (_context == event->_context) && (_code == event->_code);
+    const auto* ptr = dynamic_cast<const DomainEvent*>(&other);
+    return ptr != nullptr 
+        && (_context == ptr->_context) 
+        && (_code == ptr->_code);
 }
 
 size_t DomainEvent::hashCode() const {

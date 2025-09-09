@@ -20,8 +20,8 @@ Identifier::Identifier()
 }
 
 Identifier Identifier::createNew() {
-    Identifier result {};
-    return result;
+    Identifier id {};
+    return id;
 }
 
 array<uint8_t, 16> Identifier::createUUID() {
@@ -45,8 +45,8 @@ array<uint8_t, 16> Identifier::createUUID() {
 }
 
 bool Identifier::equals(const ValueObject& other) const {
-    const auto* o = dynamic_cast<const Identifier*>(&other);
-    return o && _value == o->_value;
+    const auto* ptr = dynamic_cast<const Identifier*>(&other);
+    return ptr != nullptr && _value == ptr->_value;
 }
 
 size_t Identifier::hashCode() const  {

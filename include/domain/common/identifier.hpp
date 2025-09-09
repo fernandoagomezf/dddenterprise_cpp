@@ -10,7 +10,7 @@ namespace vantage::domain::common {
     using std::array;
     using vantage::domain::common::ValueObject;
 
-    class Identifier : public ValueObject {
+    class Identifier final : public ValueObject {
         public:
             ~Identifier() override = default;
 
